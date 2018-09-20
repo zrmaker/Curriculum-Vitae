@@ -1,14 +1,15 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,9pt]{article}
 
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage[T1]{fontenc}
 %\usepackage[sc,osf]{mathpazo}
 \usepackage[sc]{mathpazo}
 \usepackage{sectsty}
+
+\pagestyle{fancy}
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 \def\name{Renyuan Zhang}
@@ -56,20 +57,18 @@
 % Make lists without bullets
 \renewenvironment{itemize}{
   \begin{list}{}{
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\partopsep}{0pt}
     \setlength{\leftmargin}{1.5em}
   }
-}{
-  \end{list}
-}
-
+}{\end{list}}
 
 \begin{document}
 {\huge \name \textnormal \ (Leo)}
 
-% Alternatively, print name centered and bold:
-%\centerline{\huge \bf \name}
-
-\vspace{0.25in}
+\vspace{1em}
 
 \begin{minipage}{0.55\linewidth}
   Research Assistant \\
@@ -81,35 +80,41 @@
   \begin{tabular}{ll}
     Phone: & (520) 878-8630 \\
     Email: & \href{mailto:ryzhang@email.arizona.edu}{ryzhang@email.arizona.edu} \\
-    Address: & 2724 N Neruda Ln, Tucson, AZ 85712\\
-    %Homepage: & \href{http://www.stat-or.unc.edu/}{\tt http://www.stat-or.unc.edu/} \\
+    % Address: & 2724 N Neruda Ln, Tucson, AZ 85712\\
+    LinkedIn: & \href{https://www.linkedin.com/in/zrmaker/}{https://www.linkedin.com/in/zrmaker/} \\
     GitHub: & \href{https://github.com/zrmaker}{zrmaker}
   \end{tabular}
 \end{minipage}
 
-
 %\section*{Personal}
 %
 %\begin{itemize}
-%\item Born on September 29, 1895.
-%\item United States Citizen.
+%\item Born on November 30, 1990.
+%\item Suzhou, China.
 %\end{itemize}
 
 \section*{Summary of Qualifications}
 \begin{itemize}
-  \item 4+ years of research and engineering experience in the field of radar, automated driving, imaging and sensor networks.
-  \item Intensive experience in programming in MATLAB, C/C++, Python, Java and engineering related languages in Windows and Linux environment.
+  \setlength{\itemindent}{1em}
+  \setlength{\itemsep}{.25em}
+  \item 4+ years of research and engineering experience in the field of radar, automated driving and imaging.
+  \item Understanding of ADAS sensors such as radar, camera, sonar, GPS, IMU, and lidar.
+  \item Intensive experience in programming in MATLAB, C/C++, Python, R and engineering related languages in Windows and Linux environment.
   \item A strong self motivating ability and dedication to promoting effective teamwork. A strong ability to lead a research team.
 \end{itemize}
 
 
-\section*{Education}
-
-\begin{itemize}
-  \item Ph.D. in Electrical and Computer Engineering\hfill Aug. 2015 - Present\\ {\it University of Arizona}\\Research interest: radar signal processing, radar imaging, automotive radar, micro-doppler signatures.
-  \item M.S. in Optical Sciences\hfill Aug. 2013 - Aug. 2015\\ {\it University of Arizona}\\Research interest: optical imaging, line CCD, optical coherence tomography.
-  \item B.S. in Optoelectronic Engineering\hfill Sept. 2009 - June 2013\\ {\it Chongqing University}
-\end{itemize}
+\section*{Skills}
+\begin{tabularx}{\textwidth}{lX}
+  {\bf Programming:} & Python, Mathworks\textsuperscript{\textregistered} MATLAB, R, NI LabVIEW, C/C++/C\#, JAVA.\\
+  {\bf RF \& EM:} & ANSYS EM suite and Keysight ADS.\\
+  {\bf Sensors:} & Radar, LiDAR, CMOS, CCD, sonar,  microphone and Microsoft Kinect.\\
+  {\bf Machine Learning:} & SVM, ANN, CNN, RNN, {\it k}-NN, {\it k}-means, naive Bayes, decision tree and mixture model (Gaussian).\\
+  {\bf CAD \& Production:} & SOLIDWORKS, Autodesk AutoCAD and Adobe Creative Cloud (Photoshop, Illustrator, Premiere Pro).\\
+  {\bf Operating Systems:} & Windows and Ubuntu.\\
+  {\bf Embedded Systems:} & NI control and acquisition suites and Arduino.\\
+  {\bf Others:} & Digital signal processing (DSP), imaging processing, Nvidia\textsuperscript{\textregistered} CUDA, source control (git) and controller area network (CAN).\\
+\end{tabularx}
 
 
 \section*{Publications}
@@ -117,94 +122,107 @@
 \subsection*{Journal Articles}
 
 \begin{itemize}
-\item \href{http://www.mdpi.com/1424-8220/17/6/1419}{{\bf R. Zhang} and S. Cao, "3D Imaging Millimeter Wave Circular Synthetic Aperture Radar," {\it Sensors}, vol. 17, no. 6, p. 1419, June 2017.}
+  \item {\bf R. Zhang} and S. Cao, "Real-time Human Behavior Detection via CNN using mmWave Radar," {\it IEEE Sensors Letters}. (submitted 2018)
+  \item \href{http://www.mdpi.com/1424-8220/17/6/1419}{{\bf R. Zhang} and S. Cao, "3D Imaging Millimeter Wave Circular Synthetic Aperture Radar," {\it Sensors}, vol. 17, no. 6, p. 1419, June 2017.}
 \end{itemize}
 
 \subsection*{Proceedings}
 
 \begin{itemize}
-\item {\bf R. Zhang} and S. Cao, "Support Vector Machines for Classification of Automotive Radar Interference," {\it 2018 IEEE Radar Conference (RadarConf)}, Oklahoma City, OK, USA, April 2018. (in press)
-\item \href{http://ieeexplore.ieee.org/document/7944286/}{{\bf R. Zhang} and S. Cao, "Compressed Sensing For Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0663-0668.}
-\item \href{http://ieeexplore.ieee.org/abstract/document/7944216/}{{\bf R. Zhang} and S. Cao, "Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0298-0303.}
+  \item \href{https://ieeexplore.ieee.org/abstract/document/8378586/}{{\bf R. Zhang} and S. Cao, "Support vector machines for classification of automotive radar interference," {\it 2018 IEEE Radar Conference (RadarConf18)}, Oklahoma City, OK, 2018, pp. 0366-0371.}
+  \item \href{http://ieeexplore.ieee.org/document/7944286/}{{\bf R. Zhang} and S. Cao, "Compressed Sensing For Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0663-0668.}
+  \item \href{http://ieeexplore.ieee.org/abstract/document/7944216/}{{\bf R. Zhang} and S. Cao, "Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0298-0303.}
 \end{itemize}
 
 \subsection*{Dissertation and Thesis}
 
 \begin{itemize}
-\item \href{https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PpPf3BoAAAAJ&citation_for_view=PpPf3BoAAAAJ:9yKSN-GCB0IC}{{\bf R. Zhang} and K. Kieu, "Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications," {\it University of Arizona}, 2015.}
+  \item \href{https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PpPf3BoAAAAJ&citation_for_view=PpPf3BoAAAAJ:9yKSN-GCB0IC}{{\bf R. Zhang} and K. Kieu, "Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications," {\it University of Arizona}, 2015.}
 
-\item {\bf R. Zhang} and C. Li, "Surface-Enhanced Raman Scattering Substrate Synthesis and Characterization", {\it Chongqing University}, 2013.
+  \item {\bf R. Zhang} and C. Li, "Surface-Enhanced Raman Scattering Substrate Synthesis and Characterization", {\it Chongqing University}, 2013.
 \end{itemize}
 
 
 \section*{Professional Experience}
 \begin{itemize}
-\item [--] Research Assistant at Department of Electrical and Computer Engineering \hfill 2015 - Present\\
+  \setlength{\itemsep}{1em}
+  \item Research Assistant at Department of Electrical and Computer Engineering \hfill 2015 - Present\\
 Advisor: Dr. Siyang Cao, {\it University of Arizona}.
+  \begin{itemize}
+    \item [$\bullet$] Developing CUDA algorithms on radar signal processing.
+    \item [$\bullet$] Researching on radar target clustering and classification.
+    \item [$\bullet$] Achieved human behavior detection via CNN using micro-Doppler signatures by
+  mmWave radar.
+  % Fields: Micro-Doppler Signature, CNN.\\
+  % A real-time, accurate and portable mmWave radar behavior detecting system is achieved.
+  % The detection and classification is based on micro-Doppler signature of the radar targets. A convolution neural network (CNN) is implemented in the human behavior detection.
+    \item [$\bullet$] Realized radar interference detection, classification and mitigation.
+  % Fields: Radar Interference (RFI), Machine Learning, DSP.\\
+  % Working on simulation of 77 GHz automotive radar interference. Use machine learning methods to classify different interference range-doppler response results from PRI difference, long chirp, etc.. And use filter design, circular scanning array antenna and advanced signal processing methods to mitigate interference.
+
+  % \item [--] Automotive Radar Measurement with 3D Printing Lens\\
+  % With Min Liang and Jin-pil Tak.\\
+  % Fields: Automotive Radar, DSP, RF and Antenna Theory, Antenna Measurements.\\
+  % Measurements of real automobile with 77 GHz automotive radar and 3D priting lens (URL: \url{http://techlaunch.arizona.edu/news/startup-licenses-ua-invented-radar-system}).
+    \item [$\bullet$] Completed 3D imaging millimeter wave circular SAR
+  % Fields: SAR, DSP, Radar Imaging, mmWave Imaging, Compressed Sensing.\\
+  % Paper published above.
+  \end{itemize}
+
+  \item Sensor Engineer at TuSimple \hfill Sept. 2017 - Mar. 2018\\
+  {\it TuSimple LLC\textsuperscript{\textregistered}}, Tucson, AZ.
+  \begin{itemize}
+    \item [$\bullet$] Developed and evaluated Autoliv\textsuperscript{\textregistered} 77 GHz multi-mode radar ROS driver.
+    \item [$\bullet$] Developed Bosch\textsuperscript{\textregistered} 77 GHz long-range radar and mid-range radar ROS driver.
+    \item [$\bullet$] Evaluated Delphi\textsuperscript{\textregistered} 77 GHz electronic scanning radar.
+    \item [$\bullet$] Finished Hokuyo\textsuperscript{\textregistered} URG-04LX-UG01 Scanning Laser Rangefinder development and truck trailer monitor/filter project.
+    \item [$\bullet$] Written industrial radar signal filtering and target recognition.
+
+  \end{itemize}
+
+  \item Research Assistant of Nonlinear Optics at College of Optical Sciences \hfill 2014 - 2015\\
+  Advisor: Dr. Khanh Kieu, {\it University of Arizona}.
+  \begin{itemize}
+    \item [$\bullet$] Developed and analyzed with hospitals using fiber based SD-OCT
+  % Fields: Optical Imaging, Interference, Lens Design, Spectral Domain Analysis, Fiber Optics, Medical Imaging, OCT.
+  \end{itemize}
+
+
+% \item Research Assistant of Applied Optics at College of Optical Sciences \hfill 2013 - 2014\\
+% Advisor: Dr. Rongguang Liang, {\it University of Arizona}.
+% \begin{itemize}
+% \item [$\bullet$] Confocal Microscopy
+% % Fields: Optical Imaging, Spatial Pinhole, Lens Design.
+% \end{itemize}
+
+
+\end{itemize}
+
+
+
+\section*{Education}
+
 \begin{itemize}
-\item [--] Radar Interference Detection, Classification and Mitigation\\
-Fields: Radar Interference (RFI), Machine Learning, DSP.\\
-Working on simulation of 77 GHz automotive radar interference. Use machine learning methods to classify different interference range-doppler response results from PRI difference, long chirp, etc.. And use filter design, circular scanning array antenna and advanced signal processing methods to mitigate interference.
-\item [--] Automotive Radar Measurement with 3D Printing Lens\\
-With Min Liang and Jin-pil Tak.\\
-Fields: Automotive Radar, DSP, RF and Antenna Theory, Antenna Measurements.\\
-Measurements of real automobile with 77 GHz automotive radar and 3D priting lens (URL: \url{http://techlaunch.arizona.edu/news/startup-licenses-ua-invented-radar-system}).
-\item [--] 3D Imaging Millimeter Wave Circular Synthetic Aperture Radar\\
-Fields: SAR, DSP, Radar Imaging, mmWave Imaging, Compressed Sensing.\\
-Paper published above.
-\end{itemize}
-
-\item [--] Sensor Engineer at TuSimple \hfill Sept. 2017 - Mar. 2018\\
-{\it TuSimple LLC}, Tucson, AZ.
-\begin{itemize}
-\item [--] Autoliv\textsuperscript{\textregistered} 77 GHz multi-mode radar ROS driver development and evaluation.
-\item [--] Bosch\textsuperscript{\textregistered} 77 GHz long-range radar and mid-range radar ROS driver development.
-\item [--] Delphi\textsuperscript{\textregistered} 77 GHz electronic scanning radar evaluation.
-\item [--] Hokuyo\textsuperscript{\textregistered} URG-04LX-UG01 Scanning Laser Rangefinder development and truck trailer monitor/filter project.
-\item [--] Industrial radar signal filtering and target recognition development.
-
-\end{itemize}
-
-\item [--] Research Assistant of Nonlinear Optics at College of Optical Sciences \hfill 2014 - 2015\\
-Advisor: Dr. Khanh Kieu, {\it University of Arizona}.
-\begin{itemize}
-\item [--] Thesis on Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications\\
-Fields: Optical Imaging, Interference, Lens Design, Spectral Domain Analysis, Fiber Optics, Medical Imaging, OCT.
+  \setlength{\itemsep}{1em}
+  \item Ph.D. in Electrical and Computer Engineering\hfill Aug. 2015 - Present\\ {\it University of Arizona}\\Research interest: radar signal processing, automotive radar, micro-doppler signatures, radar imaging, CUDA on radar signal processing, machine learning on human behaviros using radar.
+  \item M.S. in Optical Sciences\hfill Aug. 2013 - Aug. 2015\\ {\it University of Arizona}\\Research interest: optical imaging, line CCD, optical coherence tomography.
+  \item B.S. in Optoelectronic Engineering\hfill Sept. 2009 - June 2013\\ {\it Chongqing University}
+  \item Udacity Self-Driving Car Nanodegree\hfill Oct. 2017 - Sep. 2018\\ {\it Udacity}
 \end{itemize}
 
 
-\item [--] Research Assistant of Applied Optics at College of Optical Sciences \hfill 2013 - 2014\\
-Advisor: Dr. Rongguang Liang, {\it University of Arizona}.
-\begin{itemize}
-\item [--] Confocal Microscopy\\
-Fields: Optical Imaging, Spatial Pinhole, Lens Design.
-\end{itemize}
+% \section*{References}
+% \begin{itemize}
+% \item Dr. Siyang Cao\\
+% Department of Electrical and Computer Engineering\\
+% {\it University of Arizona}\\
+% %1230 E. Speedway Blvd.\\
+% %P.O. Box 210104\\
+% %Tucson, AZ 85721-0104\\
+% Email: \href{mailto:caos@email.arizona.edu}{caos@email.arizona.edu}\\
+% Phone: 520-621-4521
+% \end{itemize}
 
-
-\end{itemize}
-\section*{Skills}
-\begin{tabularx}{\textwidth}{lX}
-{\bf Programming:} & Mathworks MATLAB, NI LabVIEW, Eclipse JAVA, Visual Studio C/C++/C\#, Python, R, CSS, HTML and Intel FPGA SDK.\\
-{\bf RF \& EM:} & ANSYS EM suite and Keysight ADS.\\
-{\bf Sensors:} & Radar, LiDAR, CMOS, CCD, sonar, depth sensor, microphone and Microsoft Kinect.\\
-{\bf Machine Learning:} & SVM, ANN, RNN, {\it k}-NN, {\it k}-means, naive Bayes, decision tree and mixture model (Gaussian).\\
-{\bf CAD \& Production:} & SOLIDWORKS, Autodesk AutoCAD and Adobe Creative Cloud (Photoshop, Illustrator, Premiere Pro).\\
-{\bf Operating Systems:} & Windows and Ubuntu.\\
-{\bf Embedded Systems:} & NI control and acquisition suites and Arduino.\\
-{\bf Others:} & Digital signal processing (DSP), imaging processing, range-doppler processing, controller area network (CAN) for sensor fusion.\\
-\end{tabularx}
-
-\section*{References}
-\begin{itemize}
-\item Dr. Siyang Cao\\
-Department of Electrical and Computer Engineering\\
-{\it University of Arizona}\\
-%1230 E. Speedway Blvd.\\
-%P.O. Box 210104\\
-%Tucson, AZ 85721-0104\\
-Email: \href{mailto:caos@email.arizona.edu}{caos@email.arizona.edu}\\
-Phone: 520-621-4521
-\end{itemize}
 \bigskip
 
 
