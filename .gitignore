@@ -2,4 +2,7 @@
 *.log
 *.out
 *.gz
+*.fdb_latexmk
+*.fls
 special/
+coverletter/
