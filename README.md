@@ -13,8 +13,8 @@ GitHub: zrmaker
 ## Objective
 
 ```
-Seeking full time opportunity in automotive radar, radar signal processing and autonomous driving, expected
-to graduate on May 2019.
+Seeking full time opportunity in automotive radar, radar signal processing and autonomous driving. Expected
+to graduate May 2019.
 ```
 ## Education
 
@@ -82,8 +82,10 @@ trator, Premiere Pro).
 RF & EM: ANSYS©REM suite and Keysight©RADS.
 Operating Systems: Windows and Ubuntu.
 Embedded Systems: NI©R control and acquisition suites and Arduino.
-Others: Digital signal processing (DSP), imaging processing, Nvidia©R CUDA, source control
-(git) and controller area network (CAN).
+Others: Digital signal processing (DSP), imaging processing, robotic operating system (ROS),
+Nvidia©R CUDA, source control (git) and controller area network (CAN).
+Algorithms: C++ library for DSP on mmWave radar; SLAM; point cloud machine learning; radar
+micro-doppler signatures.
 ```
 ## Projects
 
@@ -134,11 +136,11 @@ Automotive radar interference detection, classificationa and mitigation
     (SVM). Automotive radar implemented in advanced driver assistance systems (ADASs) is an essential sen-
     sor in road traffic safety, e.g., moving target indication, collision avoidance and enhanced navigation system.
     However, radar-to-radar interference is inevitable as the number of automotive radar increases. Our work
-    shows different types of radar-to-radar interference with analyzing the received signal. Providing linear
-    frequency modulated transmitting (LFM) signal, filtering and dechirping techniques, the classification of
 
 
 ```
+shows different types of radar-to-radar interference with analyzing the received signal. Providing linear
+frequency modulated transmitting (LFM) signal, filtering and dechirping techniques, the classification of
 six different types of radar-to-radar interference are presented and analyzed. Time-frequency domain signal
 and range-doppler profiles of different types of interference are simulated. The machine learning classifier
 of SVM of multi-class high-dimensional waveform data classification is used to classify different interfer-
@@ -198,14 +200,12 @@ Multi-target multi-input camera-radar sensor fusion and classification
 
 CUDA on radar signal processing
 
+
 - Using CUDA libray to optimize radar signal processing chain is fully researched in this project. Improved
     automotive radar algorithms are coded via C and Python. The time cost for signal processing is largely
+    reduced and the mass processing to obtain range-Doppler-azimuth response and STAP is greatly improved
+    in this project.
 
-
-```
-reduced and the mass processing to obtain range-Doppler-azimuth response and STAP is greatly improved
-in this project.
-```
 ```
 Smart antenna on automotive radars
 ```
@@ -252,4 +252,3 @@ Dissertation and Thesis
 R. Zhang and K. Kieu, "Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical
 Applications,"University of Arizona, 2015.
 ```
-
