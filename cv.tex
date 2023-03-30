@@ -1,326 +1,330 @@
-\documentclass[letterpaper,9pt]{article}
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
 
-\usepackage{tabularx}
-\usepackage{hyperref}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage[T1]{fontenc}
-%\usepackage[sc,osf]{mathpazo}
-\usepackage[sc]{mathpazo}
-\usepackage{sectsty}
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\pagestyle{fancy}
-\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\documentclass[10pt,letter,ragged2e,withhyper]{leozhang}
 
-\def\name{Renyuan Zhang}
+%% AltaCV uses the fontawesome5 and academicon fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
 
-\hypersetup{
-  colorlinks = true,
-  urlcolor = black,
-  pdfauthor = {\name},
-  pdfkeywords = {Renyuan Zhang, Curriculum Vitae, Resume},
-  pdftitle = {\name: Curriculum Vitae},
-  pdfsubject = {Curriculum Vitae},
-  %pdfpagemode = UseNone
-}
+% Change the page layout if you need to
+% \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1in,right=1in,top=1in,bottom=1in}
 
-\geometry{
-%  body={6.5in, 9in},
-  left=.75in,
-  top=.75in,
-  right=.75in,
-  bottom=1in
-}
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
 
-\linespread{1.0}
-\setlength{\parskip}{-5pt}
-\setlength{\parindent}{0pt}
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
 
-\urlstyle{rm}
-\fancyhf{}
-\rfoot{\thepage}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{VividPurple}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
 
-\renewcommand{\familydefault}{\rmdefault}
-\sectionfont{\rmfamily\mdseries\large}
-\subsectionfont{\rmfamily\mdseries\itshape\small}
-\subsubsectionfont{\rmfamily\mdseries\itshape}
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+% \addbibresource{ref.bib}
+
 \newcommand{\etal}{\textit{et al}.}
 \newcommand{\ie}{\textit{i}.\textit{e}.}
 \newcommand{\eg}{\textit{e}.\textit{g}.}
-
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
-
-% Make lists without bullets
-\renewenvironment{itemize}{
-  \begin{list}{}{
-    \setlength{\topsep}{0pt}
-    \setlength{\itemsep}{0pt}
-    \setlength{\parsep}{0pt}
-    \setlength{\partopsep}{0pt}
-    \setlength{\leftmargin}{1.5em}
-  }
-}{\end{list}}
+\renewcommand*{\bibfont}{\small}
 
 \begin{document}
-{\huge \name \textnormal \ (Leo), Ph.D.}
 
-\vspace{1em}
+\name{Renyuan Zhang}
+\namesuffix{(Leo), Ph.D.}
+% \tagline{ADAS Radar Specialist at Lucid Motors}
+\tagline{}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+% \photoR{2.5cm}{mmayer-wikipedia-cc-by-2_0}
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{dr.leo.zhang@outlook.com}
+  \phone{669-666-4260}
+%   \twitter{@zrmaker}
+  \linkedin{zrmaker}
+  \github{zrmaker}
+  \homepage{Google Scholar}
+  %   \mailaddress{Address, Street, 00000 County}
+  \location{SF Bay Area}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
 
-\begin{minipage}{0.55\linewidth}
-  Ph.D. in Electrical and Computer Engineering \\
-  % Research Assistant \\
-  % \href{http://ece.arizona.edu/}{Department of Electrical and Computer Engineering} \\
-  \href{http://www.arizona.edu/}{\it University of Arizona} \\
-  Tucson, AZ 85721
-\end{minipage}
-\begin{minipage}{0.4\linewidth}
-  \begin{tabular}{ll}
-    Phone: & (520) 878-8630 \\
-    Email: & \href{mailto:ryzhang@email.arizona.edu}{ryzhang@email.arizona.edu} \\
-    % Address: & 2724 N Neruda Ln, Tucson, AZ 85712\\
-    LinkedIn: & \href{https://www.linkedin.com/in/zrmaker/}{https://www.linkedin.com/in/zrmaker/} \\
-    GitHub: & \href{https://github.com/zrmaker}{zrmaker}
-  \end{tabular}
-\end{minipage}
+\makecvheader
 
-%\section*{Personal}
-%
-%\begin{itemize}
-%\item Born on November 30, 1990.
-%\item Suzhou, China.
-%\end{itemize}
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
 
-\section*{Objective}
+\justifying
+
+%% Set the left/right column width ratio to 6:4.
+% \columnratio{0.6}
+% \setlength{\columnsep}{1.5em}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+% \begin{paracol}{2}
+
+\cvsection{Objective}
+Seeking full time engineer/researcher job on ADAS radar system, automotive radar vehicle integration, radar signal processing, radar-related machine learning, sensor fusion and radar target recognition. 
+
+
+\cvsection{Experience}
+
+\cvevent{ADAS HW Specialist}{\includegraphics[width=50 pt]{icons/lucid.eps} Lucid Motors}{May 2022 -- May 2023}{Newark, CA}
 \begin{itemize}
-  % \setlength{\itemindent}{1em}
-  % \setlength{\itemsep}{.25em}
-  \item Seeking full time opportunity in automotive radar, radar signal processing and autonomous driving. Expected to graduate May 2019.
+  \item Staff Engineer, component owner of Lucid vehicles Short Range Radar system.
+  \item Led the Lucid Gravity Short Range Radar ADAS system architecture defining, signal defining, diagnosis DID/DTC defining, sensor packaging, calibration requirements, ADAS feature defining and requirements, drafted production specifications, assembly work order, done FOV \& KOZ simulations efforts.
+  \item Worked with vendor on Lucid Gravity project timeline, SOW, maturity levels, sensor feature deliverables, sensor requirements.
+  \item Worked on Lucid Air Short Range Radar sensor system diagnosis, calibration, EU and KSA market retrofit, fascia testing, fleet testing, and service team request.
+  \item Led the Lucid Air vendor connections on SW releases, change requests, warranty and FA requests.
+  \item Led designing Lucid in-house ADAS radar fascia, bracket, radar testing.
+  \item Worked on Lucid level 4 autonomous driving sensor system architecture.
 \end{itemize}
 
-\section*{Education}
+\divider
 
+\cvevent{Hardware Engineer}{\includegraphics[width=10 pt]{icons/weride.eps} Weride}{July 2021 -- April 2022}{San Jose, CA}
 \begin{itemize}
-  \setlength{\itemsep}{1em}
-  \item Ph.D. in Electrical and Computer Engineering\hfill Aug. 2015 - Present\\ {\it University of Arizona}\\Research interest: radar signal processing, micro-Doppler signatures, sensor fusion, non-coherent integration, machine learning, synthetic aperture radar.
-  \item M.S. in Optical Sciences\hfill Aug. 2013 - Aug. 2015\\ {\it University of Arizona}\\Research interest: optical imaging, medical imaging, optical coherence tomography.
-  \item B.S. in Optoelectronic Engineering\hfill Sept. 2009 - June 2013\\ {\it Chongqing University}
-  \item Udacity Self-Driving Car Nanodegree\hfill Oct. 2017 - Sep. 2018\\ {\it Udacity}
+  \item Product level design of automotive radar. Led the blind spot radar sensor module development using Calterah mmWave AiP chips. 
+  \item Developed mmWave radar full signal processing chain using C++ on the programmable MMIC chip.
+  \item Involved in in-house radar PCB design and mechanical enclosure radar radome design.
+  \item Developed HW-SW data quality control with perception team.
+  \item Evaluated new generation radar samples from different vendors and adapted to new POC vehicle sensor builds.
 \end{itemize}
 
+\divider
 
-\section*{Professional Experience}
+\cvevent{Hardware Engineer}{\faLyft Lyft Inc. (Level 5)}{May 2019 -- May 2021}{Palo Alto, CA}
 \begin{itemize}
-  \setlength{\itemsep}{1em}
-  \item Research Assistant at Department of Electrical and Computer Engineering \hfill 2015 - Present\\
-Advisor: Dr. Siyang Cao, {\it University of Arizona}.
-  \begin{itemize}
-    \item [$\bullet$] Developing multi-target multi-input camera-radar fusion and classification.
-    \item [$\bullet$] Researching non-synchronized incoherent MIMO radar angle resolution improvements.
-    \item [$\bullet$] Researching radar point cloud clustering and detection by machine learning method.
-    \item [$\bullet$] Developing CUDA algorithms on radar signal processing.
-    \item [$\bullet$] Researching on radar target clustering and classification.
-    \item [$\bullet$] Achieved human behavior detection via CNN using micro-Doppler signatures by mmWave radar.
-    % Fields: Micro-Doppler Signature, CNN.\\
-    % A real-time, accurate and portable mmWave radar behavior detecting system is achieved.
-    % The detection and classification is based on micro-Doppler signature of the radar targets. A convolution neural network (CNN) is implemented in the human behavior detection.
-    \item [$\bullet$] Realized radar interference detection, classification and mitigation using SVM.
-    % Fields: Radar Interference (RFI), Machine Learning, DSP.\\
-    % Working on simulation of 77 GHz automotive radar interference. Use machine learning methods to classify different interference range-doppler response results from PRI difference, long chirp, etc.. And use filter design, circular scanning array antenna and advanced signal processing methods to mitigate interference.
+  \item Led the radar sensor module and submodule characterization, testing and algorithm verification from different vendors.
+  \item Proposed algorithms, configured and calibrated radar sensor on for on-vehicle system. Development online calibration for point cloud based automotive radars.
+  \item Delivered the radar sensor ERS, IQC and KPIs for verification and functional requirements.
+  \item Involved in developing radar early fusion algorithms.
+  \item Developed C++ based data quality improvement algorithms for perception including tracking, calibration, interference mitigation and clustering.
+  \item Developed radar sensor diagnostic tool for non-Tier 1 grade automotive radars.
+  \item Developed binary tools for camera ISP tuning to perception ML outputs.
+  \item Delivered part of automated ISP tuning algorithms and automated camera calibration system.
+\end{itemize}
 
-    % \item [--] Automotive Radar Measurement with 3D Printing Lens\\
-    % With Min Liang and Jin-pil Tak.\\
-    % Fields: Automotive Radar, DSP, RF and Antenna Theory, Antenna Measurements.\\
-    % Measurements of real automobile with 77 GHz automotive radar and 3D priting lens (URL: \url{http://techlaunch.arizona.edu/news/startup-licenses-ua-invented-radar-system}).
-    \item [$\bullet$] Completed 3D imaging millimeter wave circular SAR using single transceiver and compressed sensing.
-  \end{itemize}
+\divider
 
-  % \item Freelance Engineer at Hertzwell \hfill June - July 2018\\
-  % {\it Hertzwell\textsuperscript{\textregistered}}, Singapore.
-  % \begin{itemize}
-  %   \item [$\bullet$] Developed and evaluated Inras\textsuperscript{\textregistered} 77 GHz automotive radar with CFAR and clustering.
-  %   \item [$\bullet$] Developed TI\textsuperscript{\textregistered} 77 GHz AWR1443 evaluation board with multi-sensor support and sensor fusion support.
-  %   \item [$\bullet$] Developed TI\textsuperscript{\textregistered} radar-CV camera overlay.
-  % \end{itemize}
-
-  \item Sensor Engineer Intern at TuSimple \hfill Sept. 2017 - Mar. 2018\\
-  {\it TuSimple LLC\textsuperscript{\textregistered}}, Tucson, AZ.
-  \begin{itemize}
-    \item [$\bullet$] Developed and evaluated Autoliv\textsuperscript{\textregistered} 77 GHz multi-mode radar ROS driver.
-    \item [$\bullet$] Developed Bosch\textsuperscript{\textregistered} 77 GHz long-range radar and mid-range radar ROS driver.
-    \item [$\bullet$] Evaluated Delphi\textsuperscript{\textregistered} 77 GHz electronic scanning radar.
-    \item [$\bullet$] Finished Hokuyo\textsuperscript{\textregistered} URG-04LX-UG01 Scanning Laser Rangefinder development and truck trailer monitor/filter project.
-    \item [$\bullet$] Written industrial radar signal filtering and target recognition.
-
-  \end{itemize}
-
-  \item Research Assistant of Nonlinear Optics at College of Optical Sciences \hfill 2014 - 2015\\
-  Advisor: Dr. Khanh Kieu, {\it University of Arizona}.
-  \begin{itemize}
-    \item [$\bullet$] Developed and analyzed with hospitals using fiber based SD-OCT.
-    % Fields: Optical Imaging, Interference, Lens Design, Spectral Domain Analysis, Fiber Optics, Medical Imaging, OCT.
-  \end{itemize}
-
-
-  % \item Research Assistant of Applied Optics at College of Optical Sciences \hfill 2013 - 2014\\
-  % Advisor: Dr. Rongguang Liang, {\it University of Arizona}.
-  % \begin{itemize}
-  % \item [$\bullet$] Confocal Microscopy
-  % % Fields: Optical Imaging, Spatial Pinhole, Lens Design.
-  % \end{itemize}
-
-
+\cvevent{Research Assistant}{\faUniversity University of Arizona}{2015 -- 2019}{Tucson, AZ}
+\begin{itemize}
+  \item Maintained and developed the TI mmWave ROS interface (\href{https://github.com/radar-lab/ti_mmwave_rospkg}{GitHub link})
+  \item Achieved human behavior detection and recognition via CNN using micro-Doppler signatures by mmWave radar.
+  \item Developed multi-target multi-input camera-radar sensor fusion and classification.
+  \item Developed the mmWave sensing module for hospital ward surveillance including patient behavior recognition, tracking and target posture estimation.
+  \item Researched non-synchronized incoherent MIMO radar angle resolution improvements.
+  \item Optimized radar point cloud clustering and detection by machine learning method.
+  \item Developed CUDA algorithms on radar signal processing.
+  \item Researched on radar target clustering and classification.
+  \item Realized radar interference detection, classification and mitigation using SVM.
+  \item Improved automotive Radar Angular resolution using 3D Luneburg lens.
+  \item Completed 3D imaging mmWave circular SAR using single transceiver and compressed sensing.
 \end{itemize}
 
 
 
+\cvsection{Education}
 
-\section*{Skills}
-\begin{tabularx}{\textwidth}{lX}
-  {\bf Programming:} & Python, Mathworks\textsuperscript{\textregistered} MATLAB, R, NI LabVIEW, C/C++/C\#, JAVA.\\
-  {\bf Sensors:} & Radar, LiDAR, CMOS camera, CCD camera, sonar, microphone and Microsoft\textsuperscript{\textregistered} Kinect.\\
-  {\bf Machine Learning:} & SVM, ANN, CNN, RNN, {\it k}-NN, {\it k}-means, naive Bayes, decision tree and mixture model (Gaussian).\\
-  {\bf CAD \& Production:} & SOLIDWORKS, Autodesk\textsuperscript{\textregistered} AutoCAD and Adobe\textsuperscript{\textregistered} Creative Cloud (Photoshop, Illustrator, Premiere Pro).\\
-  {\bf RF \& EM:} & ANSYS\textsuperscript{\textregistered} EM suite and Keysight\textsuperscript{\textregistered} ADS.\\
-  {\bf Operating Systems:} & Windows and Ubuntu.\\
-  {\bf Embedded Systems:} & NI\textsuperscript{\textregistered} control and acquisition suites and Arduino.\\
-  {\bf Others:} & Digital signal processing (DSP), imaging processing, robotic operating system (ROS), Nvidia\textsuperscript{\textregistered} CUDA, source control (git) and controller area network (CAN).\\
-  {\bf Algorithms:} & C++ library for DSP on mmWave radar; SLAM; point cloud machine learning; radar micro-doppler signatures.\\
-\end{tabularx}
+\cveducation{2015 -- 2019}{Ph.D. in Electrical and Computer Engineering}{University of Arizona}{mmWave Radar: Enhancing Resolution, Target Recognition, and Fusion with Other Sensors}
+
+\divider
+
+\cveducation{2013 -- 2015}{M.S. in Optical Sciences}{University of Arizona}{Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications}
+
+\divider
+
+\cveducation{2009 -- 2013}{B.S. in Optoelectronic Engineering}{Chongqing University}{Surface-Enhanced Raman Scattering Substrate Synthesis and Characterization}
+
+% \cvsection{Experience Summary}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% % Some ad-hoc tweaking to adjust the labels so that they don't overlap
+% \hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+% \wheelchart{1.5cm}{0.5cm}{%
+%   10/13em/accent!30/Sleeping \& dreaming about work,
+%   25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
+%   5/11em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
+%   20/11em/accent!40/Spending time with family,
+%   5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
+%   30/9em/accent/Showing Yahoo!\ \mbox{employees} that their work has meaning,
+%   5/8em/accent!20/Baking cupcakes
+% }
+
+% Renyuan is an experienced engineer in the field of ADAS and autonomy industries, e.g., Lucid Motors and Lyft autonomous vehicles. He has deep understanding of automotive radar hardware and signal processing, as well as state-of-art algorithms for sensor systems like sensor fusion, radar target recognition, radar waveform design and machine learning for automotive sensors.
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+% \newpage
 
 
+\cvsection{Publications}
 
-\section*{Projects}
+\nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+
+\cvpublications{\faCopy[regular]}{Patents}{}
 \begin{itemize}
-  \setlength{\itemsep}{1em}
-  \item Non-synchronized integration using multiple FMCW MIMO radars
-  \begin{itemize}
-    \item [$\bullet$] In this project, the non-synchronized integration of multiple frequency-modulated continuous-wave (FMCW) radars is presented. A phase error deduction method on different nonsynchronized radars using trust-region-reflective least squares algorithm is introduced. Better angle of arrival (AoA) estimation,
-    better angular resolution and better side lobes deduction are realized in experimental result. Therefore, integrating multiple independent radar systems to emulate a large aperture is achieved.
-    \item [$\bullet$] Paper: \\
-    {\bf R. Zhang} and S. Cao, "Non-Synchronized Integration using Multiple Radars via Least Squares Fitting," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  mmWave radar.
-  \end{itemize}
+  \item {\it L269.USNP00}	{\bf R. Zhang}, M. Emadi, A. Mostajeran, J. Izadian, "Sequential Clustering". (Filed 12/27/2019)
+  \item {\it L334.USNP00} {\bf R. Zhang}, M. Emadi, A. Mostajeran, J. Izadian, "Blind Online Calibration for Vehicle Radar". (Filed	12/30/2019)
+  \item {\it L335.USNP00} {\bf R. Zhang}, M. Emadi, A. Mostajeran, J. Izadian, "Adaptive Clutter Removal From Radar Images". (Filed	12/30/2019)
+  \item {\it L338.USNP00} {\bf R. Zhang}, M. Emadi, A. Mostajeran, J. Izadian, "Adaptive Gating for Radar Tracking". (Filed	12/30/2019)
+  \item \href{https://patents.justia.com/patent/20190353478}{F. Deng, {\bf R. Zhang}, \etal{}, "System and Method for Angle Measurement,"	United States Patent application 20190353478.}
+\end{itemize}
+\divider
 
-  \item Human behavior detection and classification using micro-Doppler signature
-  \begin{itemize}
-    \item [$\bullet$] A real-time behavior detection system using millimeter wave (mmWave) radar is presented in this project. Radar is used to sense the micro-Doppler information of targets. A convolution neural network (CNN) is further implemented in the detecting and classifying the human motion behaviors using this information. Both the convolution layers and architecture of CNNs are presented. The analysis on loss and accuracy of training results are also shown. The experimental result indicates a precise determination of human motion behavior detection using the proposed system.
-    \item [$\bullet$] Paper: \\
-    \href{https://ieeexplore.ieee.org/document/8585077}{{\bf R. Zhang} and S. Cao, "Real-time Human Motion Behavior Detection via CNN using mmWave Radar," {\it IEEE Sensors Letters}.}\\
-    F. Jin, {\bf R. Zhang} \etal, "Multiple Patients Behavior Detection in Real-time using mmWave Radar and Deep CNNs," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  \end{itemize}
 
-  \item Radar point cloud clustering and machine learning
-  \begin{itemize}
-    \item [$\bullet$] In this project, a robust and adaptive radar point cloud clustering algorithm, named radar elliptical density-based spatial clustering of applications with noise (REDBSCAN), is presented. The proposed algorithm shows a better clustering results for adapting to arbitrary shape of targets as well as any number of targets comparing with traditional clustering methods. The algorithm is presented, and is implemented in experiments using the state-of-art millimeter wave (mmWave) radar sensor with multiple-input multiple-output (MIMO) antennas. The related signal processing chain and the clustering outcomes are also discussed.
-    \item [$\bullet$] Paper: \\
-    {\bf R. Zhang} and S. Cao, "Robust and Adaptive Radar Elliptical Density-Based Spatial Clustering and Labelling for mmWave Radar Point Cloud Data," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  \end{itemize}
+% \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}}, type=article]
+\cvpublications{\faFile*[regular]}{Journal Articles}{}
+\begin{itemize}
+  \item \href{https://ieeexplore.ieee.org/document/8844649}{{\bf R. Zhang} and S. Cao, "Extending Reliability of mmWave Radar Tracking and Detection via Fusion with Camera," {\it IEEE Access}, vol. 7, pp. 137065-137079, 2019.}
+  \item \href{https://ieeexplore.ieee.org/document/9083948}{A. Sengupta, {\bf R. Zhang}, \etal{}, "mm-Pose: Real-Time Human Skeletal Posture Estimation using mmWave Radars and CNNs," {\it IEEE Sensors Journal}, vol. 20, no. 17, pp. 10032-10044, 2020.}
+  \item \href{https://ieeexplore.ieee.org/document/8585077}{{\bf R. Zhang} and S. Cao, "Real-time Human Motion Behavior Detection via CNN using mmWave Radar," {\it IEEE Sensors Letters}, vol. 3, no. 2, pp. 1-4, 2019.}
+  \item \href{http://www.mdpi.com/1424-8220/17/6/1419}{{\bf R. Zhang} and S. Cao, "3D Imaging Millimeter Wave Circular Synthetic Aperture Radar," {\it Sensors}, vol. 17, no. 6, pp. 1419, June 2017.}
+\end{itemize}
+\divider
 
-  
-
-  \item Automotive radar interference detection, classificationa and mitigation
-  \begin{itemize}
-    \item [$\bullet$] The project studies classification of the automotive radar interference waveforms via support vector machine (SVM). Automotive radar implemented in advanced driver assistance systems (ADASs) is an essential sensor in road traffic safety, e.g., moving target indication, collision avoidance and enhanced navigation system. However, radar-to-radar interference is inevitable as the number of automotive radar increases. Our work shows different types of radar-to-radar interference with analyzing the received signal. Providing linear frequency modulated transmitting (LFM) signal, filtering and dechirping techniques, the classification of six different types of radar-to-radar interference are presented and analyzed. Time-frequency domain signal and range-doppler profiles of different types of interference are simulated. The machine learning classifier of SVM of multi-class high-dimensional waveform data classification is used to classify different interference waveforms and noninterference waveforms. Random produced dataset is cross validated through the SVM classifier. Different types of interference prediction accuracies are shown and verified by the proposed method. The confusion matrix of interference and noninterference, detecting different types of interference and classifying all incoming receiving signal are presented.
-    \item [$\bullet$] Paper: \\
-    \href{https://ieeexplore.ieee.org/abstract/document/8378586/}{{\bf R. Zhang} and S. Cao, "Support vector machines for classification of automotive radar interference," {\it 2018 IEEE Radar Conference (RadarConf18)}, Oklahoma City, OK, 2018, pp. 0366-0371.}
-  \end{itemize}
-
-  \item 3D imaging millimeter wave circular synthetic aperture radar
-  \begin{itemize}
-    \item [$\bullet$] In this project, a newmillimeter wave 3D imaging radar is proposed. The user just needs to move the radar along a circular track, a high resolution 3D imaging can be generated. The proposed radar uses the movement of itself to synthesize a large aperture in both the azimuth and elevation directions. It can utilize inverse Radon transform to resolve 3D imaging. To improve the sensing result, compressed sensing approach is further investigated. The simulation and experimental result further illustrated the design. Because a single transceiver circuit is needed, a light, affordable and high resolution 3D mmWave imaging radar is illustrated.
-    \item [$\bullet$] Paper: \\
-    \href{http://www.mdpi.com/1424-8220/17/6/1419}{{\bf R. Zhang} and S. Cao, "3D Imaging Millimeter Wave Circular Synthetic Aperture Radar," {\it Sensors}, vol. 17, no. 6, p. 1419, June 2017.} \\
-    \href{http://ieeexplore.ieee.org/document/7944286/}{{\bf R. Zhang} and S. Cao, "Compressed Sensing For Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0663-0668.} \\
-    \href{http://ieeexplore.ieee.org/abstract/document/7944216/}{{\bf R. Zhang} and S. Cao, "Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0298-0303.}
-  \end{itemize}
-
-  \item Optical coherence tomography
-  \begin{itemize}
-    \item [$\bullet$] Spectral Domain Optical Coherence Tomography (SD-OCT) is introduced in this project. In comparison to the first generation Time Domain Optical Coherence Tomography (TDOCT), SD-OCT is superior in terms of its capturing speed, signal to noise ratio, and sensitivity. The SD-OCT has been widely used in both clinical and research imaging. The primary goal of this research is to design and construct a Spectral Domain Optical Coherence Tomography system which consists of a fiber-based imaging system and a line scan CCD-based high-speed spectrometer, and is capable of imaging and analyzing biological tissue at a wavelength of 1040 nm. Additionally, a NI LabVIEW software for controlling, acquiring and signal processing is developed and implemented. An axial resolution of 16.9 micrometer is achieved, and 2-D greyscale images of various samples have been obtained from our SD-OCT system. The device was initially calibrated using a glass coverslip, and then tested on multiple biological samples, including the distal end of a human fingernail, onion peels, and pancreatic tissues. In each of these images, both tissue and cell structures were observed at depths of up to 0.6 millimeter. The A-scan processing time is 8.445 millisecond. Our SD-OCT system demonstrates tremendous potential in becoming a vital imaging tool for clinicians and researchers.
-    \item [$\bullet$] Thesis: \\
-    \href{https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PpPf3BoAAAAJ&citation_for_view=PpPf3BoAAAAJ:9yKSN-GCB0IC}{{\bf R. Zhang} and K. Kieu, "Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications," {\it University of Arizona}, 2015.}
-  \end{itemize}
-
-  \item Multi-target multi-input camera-radar sensor fusion and classification
-  \begin{itemize}
-    \item [$\bullet$] In this project, comprehensive sensor fusion by automotive radar and camera is studied. Motion based multi-target tracking and classification is achieved. Implemented micro-Doppler signature machine learning, region CNN and YOLO allows the target recognition and classification. In this project, the better target detection and tracking and the better target recognition and classification using dual sensors are realized.
-    \item [$\bullet$] Paper in progress.
-  \end{itemize}
-
-  \item CUDA on radar signal processing
-  \begin{itemize}
-    \item [$\bullet$] Using CUDA libray to optimize radar signal processing chain is fully researched in this project. Improved automotive radar algorithms are coded via C and Python. The time cost for signal processing is largely reduced and the mass processing to obtain range-Doppler-azimuth response and STAP is greatly improved in this project.
-  \end{itemize}
-
-  \item Smart antenna on automotive radars
-  \begin{itemize}
-    \item [$\bullet$] In this project, a circular smart antenna for automotive radar is designed. The smart antenna can enhance the receiving power from designated directions. The antenna pattern and array factors are presented.
-  \end{itemize}
-
-  \item Automotive radar SAR terrain mapping
-  \begin{itemize}
-    \item [$\bullet$] The synthetic aperture terrain mapping by emulating multiple apertures over automotive patch antenna is achieved in this project. The automotive radar is fused with GPS and IMU to get the ground truth. The automotive radar terrain mapping is conducted on autonomous driving test vehicle of ECE department of University of Arizona.
-  \end{itemize}
+% \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+\cvpublications{\faUsers}{Conference Proceedings}{}
+\begin{itemize}
+  \item \href{https://ieeexplore.ieee.org/abstract/document/9058256}{{\bf R. Zhang} and S. Cao, "Non-Synchronized Integration using Multiple Radars via Least Squares Fitting," {\it 2019 IEEE National Aerospace and Electronics Conference (NAECON)}, Dayton, OH, 2019, pp. 694-697.}
+  \item \href{https://ieeexplore.ieee.org/abstract/document/9048869}{{\bf R. Zhang} and S. Cao, "Robust and Adaptive Radar Elliptical Density-Based Spatial Clustering and Labelling for mmWave Radar Point Cloud Data," {\it 2019 53rd Asilomar Conference on Signals, Systems, and Computers}, Pacific Grove, CA, pp. 919-924.}
+  \item \href{https://ieeexplore.ieee.org/document/8835656}{F. Jin, {\bf R. Zhang}, \etal{}, "Multiple Patients Behavior Detection in Real-time using mmWave Radar and Deep CNNs," {\it 2019 IEEE Radar Conference}, Boston, MA, 2019, pp. 1-6.}
+  \item \href{https://ieeexplore.ieee.org/abstract/document/8378586}{{\bf R. Zhang} and S. Cao, "Support vector machines for classification of automotive radar interference," {\it 2018 IEEE Radar Conference (RadarConf18)}, Oklahoma City, OK, 2018, pp. 0366-0371.}
+  \item \href{http://ieeexplore.ieee.org/document/7944286}{{\bf R. Zhang} and S. Cao, "Compressed Sensing For Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, 2017, pp. 0663-0668.}
+  \item \href{http://ieeexplore.ieee.org/abstract/document/7944216}{{\bf R. Zhang} and S. Cao, "Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, 2017, pp. 0298-0303.}
 \end{itemize}
 
+% \cvsection{Life Philosophy}
+% \begin{quote}
+% ``If you don't have any shadows, you're not standing in the light.''
+% \end{quote}
 
-\section*{Publications}
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+% \switchcolumn
 
-% \subsection*{US Patents}
+\cvsection{Skills}
 
-% \begin{itemize}
-%   \item F. Deng, {\bf R. Zhang} and L. Nie, "Truck Trailer Angle Measurement using Single Beam Lidar," {\it US Patents}. (submitted 2018)
+\cvtag{ADAS}
+\cvtag{Automotive Radar}
+\cvtag{Sensor System}
+\cvtag{Autonomy}
 
-% \end{itemize}
+\divider
 
-\subsection*{Journal Articles}
+\cvtag{C/C++}
+\cvtag{Python}
+\cvtag{Matlab}
+\cvtag{Shell}
+\cvtag{Source Control}
+\cvtag{Algorithm Development}
+\cvtag{Data Analysis}
 
-\begin{itemize}
-  \item \href{https://ieeexplore.ieee.org/document/8585077}{{\bf R. Zhang} and S. Cao, "Real-time Human Motion Behavior Detection via CNN using mmWave Radar," {\it IEEE Sensors Letters}.}
-  \item \href{http://www.mdpi.com/1424-8220/17/6/1419}{{\bf R. Zhang} and S. Cao, "3D Imaging Millimeter Wave Circular Synthetic Aperture Radar," {\it Sensors}, vol. 17, no. 6, p. 1419, June 2017.}
-\end{itemize}
+\divider
 
-\subsection*{Proceedings}
+\cvtag{FMCW}
+\cvtag{MIMO}
+\cvtag{DSP}
+\cvtag{Radar DSP}
+\cvtag{Waveform Design}
+\cvtag{Image Processing}
+\cvtag{Computer Vision}
+\cvtag{Sensor Networking}
+\cvtag{Sensor Fusion}
+\cvtag{Machine Learning}
+\cvtag{Denoising}
+\cvtag{Target Recognition}
 
-\begin{itemize}
-  \item {\bf R. Zhang} and S. Cao, "Non-Synchronized Integration using Multiple Radars via Least Squares Fitting," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  \item {\bf R. Zhang} and S. Cao, "Robust and Adaptive Radar Elliptical Density-Based Spatial Clustering and Labelling for mmWave Radar Point Cloud Data," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  \item F. Jin, {\bf R. Zhang} \etal, "Multiple Patients Behavior Detection in Real-time using mmWave Radar and Deep CNNs," {\it 2019 IEEE Radar Conference}. (submitted Oct. 2018)
-  \item \href{https://ieeexplore.ieee.org/abstract/document/8378586/}{{\bf R. Zhang} and S. Cao, "Support vector machines for classification of automotive radar interference," {\it 2018 IEEE Radar Conference (RadarConf18)}, Oklahoma City, OK, 2018, pp. 0366-0371.}
-  \item \href{http://ieeexplore.ieee.org/document/7944286/}{{\bf R. Zhang} and S. Cao, "Compressed Sensing For Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0663-0668.}
-  \item \href{http://ieeexplore.ieee.org/abstract/document/7944216/}{{\bf R. Zhang} and S. Cao, "Portable Millimeter Wave 3D Imaging Radar," {\it 2017 IEEE Radar Conference (RadarConf)}, Seattle, WA, USA, May 2017, pp. 0298-0303.}
-\end{itemize}
-
-\subsection*{Dissertation and Thesis}
-
-\begin{itemize}
-  \item \href{https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PpPf3BoAAAAJ&citation_for_view=PpPf3BoAAAAJ:9yKSN-GCB0IC}{{\bf R. Zhang} and K. Kieu, "Fiber Based Spectral Domain Optical Coherence Tomography: Mechanism and Clinical Applications," {\it University of Arizona}, 2015.}
-
-%   \item {\bf R. Zhang} and C. Li, "Surface-Enhanced Raman Scattering Substrate Synthesis and Characterization", {\it Chongqing University}, 2013.
-\end{itemize}
-
-
-
-
-% \section*{References}
-% \begin{itemize}
-% \item Dr. Siyang Cao\\
-% Department of Electrical and Computer Engineering\\
-% {\it University of Arizona}\\
-% Email: \href{mailto:caos@email.arizona.edu}{caos@email.arizona.edu}\\
-% Phone: 520-621-4521
-% \end{itemize}
-
-\bigskip
+% \newpage
 
 
+\cvsection{Miscellaneous}
 
+\cvachievement{\faTrophy}{2020 IEEE Sensors Letters Best Paper Award}{Real-Time Human Motion Behavior Detection via CNN Using mmWave Radar}
+
+\divider
+
+\cvachievement{\faGithub}{Public Repo}{The TI mmWave ROS interface which is used by many mmWave radar research groups worldwide (\href{https://github.com/radar-lab/ti_mmwave_rospkg}{GitHub})}
+
+\divider
+
+\cvachievement{\faComments}{Reviewer}{\vspace{-.8\topsep}\begin{itemize}[nosep,topsep=0pt]
+    \item IEEE Transactions on Signal Processing
+    \item IEEE Sensors Journal 
+    \item IEEE Radar Conference
+\end{itemize}}
+
+% \divider
+
+% \cvachievement{\faChartLine}{Google's Growth}{from a hundred thousand searches per day to over a billion}
+
+% \newpage
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \end{paracol}
 
 \end{document}
